@@ -1,5 +1,21 @@
 <h1>This is a page to create a particle</h1>
 
+<%# Show errors if any%>
+<% if @particle.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@particle.errors.count, "error") %> prohibited
+      this particle from being saved:
+    </h2>
+    <ul>
+      <% @particle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%# Render form %>
 <%= form_with scope: :particle, url: particles_path, local: true do |form| %>
   <p>
     <%= form.label :name %><br>

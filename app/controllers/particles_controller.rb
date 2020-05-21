@@ -8,13 +8,17 @@ class ParticlesController < ApplicationController
   end
 
   def new
+    @particle = Particle.new
+
   end
 
   def create
     @particle = Particle.new(particle_params)
-
-    @particle.save
-    redirect_to @particle
+    if @particle.save
+      redirect_to @particle
+    else
+      render 'new'
+    end
   end
 
   private
