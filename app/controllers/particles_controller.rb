@@ -12,6 +12,13 @@ class ParticlesController < ApplicationController
 
   end
 
+  def destroy
+    @particle = Particle.find(params[:id])
+    @particle.destroy
+
+    redirect_to particles_path
+  end
+
   def edit
     @particle = Particle.find(params[:id])
   end
