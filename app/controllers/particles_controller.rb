@@ -12,6 +12,20 @@ class ParticlesController < ApplicationController
 
   end
 
+  def edit
+    @particle = Particle.find(params[:id])
+  end
+
+  def update
+    @particle = Particle.find(params[:id])
+
+    if @particle.update(particle_params)
+      redirect_to @particle
+    else
+      render 'edit'
+    end
+  end
+
   def create
     @particle = Particle.new(particle_params)
     if @particle.save
