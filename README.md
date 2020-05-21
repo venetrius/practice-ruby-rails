@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+create new:
+- app
+  rails new <app-name>
+- controller:
+  rails generate controller Welcome index
+  to have an end-point modify routes.rb -> it will generate routes on start
+  -> the controller has to have a function for the end-point
+  -> the controller has to have a view template associated with the function
