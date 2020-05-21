@@ -1,0 +1,19 @@
+<h1>Listing Particles</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+
+  <% @particles.each do |particle| %>
+    <tr>
+      <td><%= particle.name %></td>
+      <td><%= particle.spin %></td>
+            <td><%= particle.color %></td>
+
+      <td><%= link_to 'Show', particle_path(particle) %></td>
+    </tr>
+  <% end %>
+</table>

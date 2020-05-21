@@ -1,4 +1,12 @@
 class ParticlesController < ApplicationController
+  def index
+    @particles = Particle.all
+  end
+
+  def show
+    @particle = Particle.find(params[:id])
+  end
+
   def new
   end
 
